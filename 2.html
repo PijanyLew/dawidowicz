@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <title>Przygotowanie do egzaminu E14</title>
+        <style>
+            /* QUIZ STYLES */
+            /* Styles to prettify the quiz page */
+            
+            html {
+                /* kolor tła dokumentu */
+                  background: #B22222;
+            }
+            
+            /* Szata okna pytań */
+                body {
+                width: 1300px;
+                margin: 0 auto;
+                border: 2px solid #ccc;
+                border-top: none;
+                color: #353535;
+                background: #F0E68C;
+                padding: 28px;
+                font-family: Trebuchet, Arial,Helvetica,sans-serif;
+                font-size: 16px;
+                line-height: 1.4em;
+            }
+            
+            z1,b1,n1,h0,h1,h2,h3,h4,h5,h6 {font-weight: bold;}
+            
+            z1 {
+                font-size: 30px;
+                color: #006400;
+            }
+            
+            b1 {
+                font-size: 30px;
+                color: #B22222;
+            }
+            
+            n1 {
+                font-size: 30px;
+                color: #1E90FF;
+            }
+            
+            h1 {
+                font-size: 35px;
+                margin: 15px 0;
+                color: #008000;
+            }
+            
+            h2 {
+                font-size: 24px;
+                margin: 15px 0;
+                
+            }
+            
+            h3 {
+                font-size: 30px;
+                margin: 15px 0;
+                color: #0C4569;
+            }
+            
+            h4 {
+                font-size: 16px;
+                margin: 10px 0;
+            }
+            
+            h5 {
+                font-size: 35px;
+                 margin: 15px 0;
+                color: #A52A2A;
+            }
+            
+            h6 {
+                font-size: 30px;
+                margin: 15px 0;
+                color: #FF0000;
+            }
+            
+            strong { font-weight: bold; }
+            em { font-style: italic; }
+            ul { list-style-type: circle; }
+            ol { list-style-type: decimal; }
+            ol li { list-style-type: decimal; margin-left: 20px; }
+            
+            /* Szata  batonów okna pytań */
+                .button {
+                cursor: pointer;
+                font-weight: bold;
+                float: left;
+                width: auto;
+                padding: 8px 15px;
+                color:#FFFF00;
+                background-color:#FF0000;
+                border: 2px solid #fff;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 1px;
+                text-decoration: none; 
+                font-size: 25px;
+            }
+            
+            /* Najazd Szata batonów okna pytań */
+               .button:hover {
+               color: #FFFF00;
+               background-color:#800000;
+            }
+            
+            /* Szata początek quizu */
+            .startQuiz {
+                margin-top: 100px;
+            }
+            
+            /* clearfix */
+            .quizArea, .quizResults {
+                zoom: 1;
+            }
+            .quizArea:before, .quizArea:after, .quizResults:before, .quizResults:after {
+                content: "\0020";
+                display: block;
+                height: 0;
+                visibility: hidden;
+                font-size: 0;
+            }
+            .quizArea:after, .quizResults:after {
+                clear: both;
+            }
+            
+            .questionCount {
+                float:right;
+                -webkit-border-radius: 1px;
+                -moz-border-radius: 1px;
+                margin-top: 0px;
+                margin-right: 0px;
+                font-size: 38px;
+                font-style: italic;
+                background-color:#000050;
+               color:#FFFF00;
+               border: 2px solid #fff;
+                width: 125px;
+                text-align:center;
+                padding: 10px 10px;
+            }
+            
+            .questionCount span {
+                font-weight: bold;
+            }
+            
+            ol.questions {
+                margin-left: 0;
+            }
+            
+            ol.questions li {
+                margin-left: 0;
+            }
+            
+            ul.answers {
+                margin-left: 30px;
+                margin-bottom: 20px;
+            }
+            
+            ul.responses li {
+             margin: 10px 20px 20px;
+            }
+            
+            ul.responses li p span {
+                display: block;
+                font-weight: bold;
+                font-size: 18px;
+            }
+            
+            ul.responses li.correct p span {
+                color:  #008000;
+                font-size: 25px;
+            }
+            
+            ul.responses li.incorrect p span {
+                color:  #ff0000;
+                font-size: 25px;
+            }
+            
+            .quizResults h1 {
+                margin: 0;
+            }
+            .quizResults h1 span {
+                font-weight: normal;
+                font-style: italic;
+            }
+            .quizResultsCopy {
+                margin-top: 20px;
+            }
+            
+            .odnosnik {
+              cursor: pointer;
+              float: left;
+              width: auto;
+              color:#FFFF00;
+              background-color:#FF0000;
+              border: 2px solid #fff;
+              -webkit-border-radius: 0px;
+              -moz-border-radius: 0px;
+              border-radius: 1px;
+              text-decoration: none;
+              padding: 8px 15px;
+              font-size: 25px;	
+              font-weight: bold;
+                 
+            }
+            
+            .odnosnik:hover {
+                background-color:#800000;
+            }
+                /* obramowanie odpowiedzi */
+            ul.answers li{
+               width: 98%;
+               border: 2px solid #fff;
+              -webkit-border-radius: 2px;
+              -moz-border-radius: 2px;
+              border-radius: 1px;
+              text-decoration: none;
+              padding: 8px 10px;
+              font-size: 20px;
+            }
+            
+            ul.answers li:hover{   
+               background-color:#000050;
+               color:#FFFF00;
+            }
+            
+            ul.answers li:active{         
+               background-color:#4996E3;
+                color:#ffffff;
+            }
+            
+            input[type=radio] {  
+                cursor: pointer;
+                height: 50px;
+                width: 50px;
+            }
+            
+            .nextQuestion
+            {
+              cursor: pointer;
+              float:right;
+              margin-bottom: 10px;
+              padding: 20px 18px;
+              font-size: 30px;	
+              font-weight: bold; 
+            }
+            
+             .backButton
+            {
+              cursor: pointer;
+              float:left;
+              margin-bottom: 10px;
+              padding: 20px 18px;
+              font-size: 30px;	
+              font-weight: bold; 
+            }
+            
+            .timer
+            {
+             width: 70px;
+             background-color:#4996E3;
+             color:#ffffff;
+             padding: 6px 15px;
+             border: 2px solid #fff;
+             -webkit-border-radius: 5px;
+             -moz-border-radius: 5px;
+             border-radius: 1px;
+             font-size: 35px;	
+            }
+            
+            /* Szata batonów START */
+               .odnosnik1 {
+                float:right;
+                margin-top:0px;
+                margin-right: 0px;
+                cursor: pointer;
+                text-align:center;
+                text-decoration: none;
+                width: auto;
+                padding: 10px 15px;
+                color:#ffffff;
+                background-color:#00cc33;
+                border: 2px solid #fff;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 1px;
+                text-decoration: none; 
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .odnosnik1:hover {
+                  color:#FFFF00;
+                  background-color:#8A690E;
+            }
+        </style>
+
+    </head>
+
+    <body id="slickQuiz">
+        <h1 class="quizName" style="display: block;">JAVASCRIPT Instrukcja IF,pętle FOR ,DO WHILE ,WHILE.<h5>*LM* CZ.2</h5></h1>
+        <div class="quizArea" style="display: none;">
+        <div class="quizHeader" style="display: block;">
+       <table width="100%">
+       <tbody><tr><td width:="" "20%"="">
+       <h3>CZAS DO ZAKOŃCZENIA EGZAMINU : <span id="countdown" class="timer"> 37:51</span></h3>
+       </td><td></td><td width:="" "80%"="">
+       <font color="white"></font></td><td>
+       <a style="text-decoration: none;" href="start6.html"> 
+       <div class="odnosnik1" style="text-decoration: none;" href="test6.html">KONIEC</div></a></td>
+       </tr>
+       </tbody></table>
+       
+       <a class="button startQuiz" href="" style="display: none;">START !</a>
+       </div>
+       <!-- where the quiz gets built -->
+       <ol class="questions"><li class="question correctResponse" id="question0" style="display: none;"><div class="questionCount"><span class="current">1</span> <b>z</b> <span class="total">25</span></div> <h2>1. <img src="gra/_2_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question0_0" name="question0" type="radio"><label for="question0_0">20</label></li><li><input id="question0_1" name="question0" type="radio"><label for="question0_1">10</label></li><li><input id="question0_2" name="question0" type="radio"><label for="question0_2">0</label></li></ul><a href="" class="button backToQuestion">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question correctResponse" id="question1" style="display: none;"><div class="questionCount"><span class="current">2</span> <b>z</b> <span class="total">25</span></div> <h2>2. <img src="gra/_5_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question1_0" name="question1" type="radio"><label for="question1_0"> 1 3 5 7 9 11 13 15 17 19</label></li><li><input id="question1_1" name="question1" type="radio"><label for="question1_1"> 2 4 6 8 10 12 14 16 18 20</label></li><li><input id="question1_2" name="question1" type="radio"><label for="question1_2"> 1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question2" style="display: none;"><div class="questionCount"><span class="current">3</span> <b>z</b> <span class="total">25</span></div> <h2>3. <img src="gra/25_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question2_0" name="question2" type="radio"><label for="question2_0">123456</label></li><li><input id="question2_1" name="question2" type="radio"><label for="question2_1">Jest błąd w skrypcie.</label></li><li><input id="question2_2" name="question2" type="radio"><label for="question2_2">246</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question3" style="display: none;"><div class="questionCount"><span class="current">4</span> <b>z</b> <span class="total">25</span></div> <h2>4. <img src="gra/23_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question3_0" name="question3" type="radio"><label for="question3_0">024</label></li><li><input id="question3_1" name="question3" type="radio"><label for="question3_1">012345 </label></li><li><input id="question3_2" name="question3" type="radio"><label for="question3_2">12345</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question4" style="display: none;"><div class="questionCount"><span class="current">5</span> <b>z</b> <span class="total">25</span></div> <h2>5. <img src="gra/21_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question4_0" name="question4" type="radio"><label for="question4_0">8</label></li><li><input id="question4_1" name="question4" type="radio"><label for="question4_1">16</label></li><li><input id="question4_2" name="question4" type="radio"><label for="question4_2">32</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question5" style="display: none;"><div class="questionCount"><span class="current">6</span> <b>z</b> <span class="total">25</span></div> <h2>6. <img src="gra/18_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question5_0" name="question5" type="radio"><label for="question5_0">XXXXXXXXX</label></li><li><input id="question5_1" name="question5" type="radio"><label for="question5_1">X</label></li><li><input id="question5_2" name="question5" type="radio"><label for="question5_2">XXXXXXXX</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question6" style="display: none;"><div class="questionCount"><span class="current">7</span> <b>z</b> <span class="total">25</span></div> <h2>7. <img src="gra/10_pyt.jpg" style="vertical-align: middle"> Ten operator to  ?</h2><ul class="answers"><li><input id="question6_0" name="question6" type="radio"><label for="question6_0">Większy lub równy.Sprawdza czy liczba po prawej stronie znaku jest większa od liczby po lewej lub jej równa.</label></li><li><input id="question6_1" name="question6" type="radio"><label for="question6_1">Większy lub równy.Sprawdza czy liczba po lewej stronie znaku jest większa od liczby po prawej lub jej równa.</label></li><li><input id="question6_2" name="question6" type="radio"><label for="question6_2">Równy lub większy.Sprawdza czy liczba po lewej stronie znaku jest mniejsza od liczby po prawej lub jej równa.</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question correctResponse" id="question7" style="display: none;"><div class="questionCount"><span class="current">8</span> <b>z</b> <span class="total">25</span></div> <h2>8. <img src="gra/16_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question7_0" name="question7" type="radio"><label for="question7_0">Abacki,Babacki,Cabacki,Dabacki</label></li><li><input id="question7_1" name="question7" type="radio"><label for="question7_1">AbackiBabackiCabackiDabacki</label></li><li><input id="question7_2" name="question7" type="radio"><label for="question7_2">Abacki Babacki Cabacki Dabacki</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question8" style="display: none;"><div class="questionCount"><span class="current">9</span> <b>z</b> <span class="total">25</span></div> <h2>9. <img src="gra/_8_pyt.jpg" style="vertical-align: middle"> Ten operator to ?</h2><ul class="answers"><li><input id="question8_0" name="question8" type="radio"><label for="question8_0">Identyczne .Sprawdza czy dwie wartości są dokładnie takie same.</label></li><li><input id="question8_1" name="question8" type="radio"><label for="question8_1">Równa się .Sprawdza czy dwie wartości są takie same.</label></li><li><input id="question8_2" name="question8" type="radio"><label for="question8_2">Przypisuje wartość jednej zmiennej do drugiej zmiennej.</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question9" style="display: none;"><div class="questionCount"><span class="current">10</span> <b>z</b> <span class="total">25</span></div> <h2>10. <img src="gra/19_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question9_0" name="question9" type="radio"><label for="question9_0">0123456</label></li><li><input id="question9_1" name="question9" type="radio"><label for="question9_1">123456</label></li><li><input id="question9_2" name="question9" type="radio"><label for="question9_2">0246</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question10" style="display: none;"><div class="questionCount"><span class="current">11</span> <b>z</b> <span class="total">25</span></div> <h2>11. <img src="gra/14_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question10_0" name="question10" type="radio"><label for="question10_0">10, 9, 8, 7, 6, 5, 4, 3, 2, 1</label></li><li><input id="question10_1" name="question10" type="radio"><label for="question10_1">11 10 9 8 7 6 5 4 3 2 1</label></li><li><input id="question10_2" name="question10" type="radio"><label for="question10_2">10 9 8 7 6 5 4 3 2 1</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question11" style="display: none;"><div class="questionCount"><span class="current">12</span> <b>z</b> <span class="total">25</span></div> <h2>12. <img src="gra/12_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question11_0" name="question11" type="radio"><label for="question11_0">Możesz iść na kolacje i do kina.</label></li><li><input id="question11_1" name="question11" type="radio"><label for="question11_1">Spędzisz wieczór przed telewizorem.</label></li><li><input id="question11_2" name="question11" type="radio"><label for="question11_2">Możesz iść na dobrą kolację.</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question12" style="display: none;"><div class="questionCount"><span class="current">13</span> <b>z</b> <span class="total">25</span></div> <h2>13. <img src="gra/24_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question12_0" name="question12" type="radio"><label for="question12_0">12345678910</label></li><li><input id="question12_1" name="question12" type="radio"><label for="question12_1">Jest błąd w skrypcie.</label></li><li><input id="question12_2" name="question12" type="radio"><label for="question12_2">246810</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question13" style="display: none;"><div class="questionCount"><span class="current">14</span> <b>z</b> <span class="total">25</span></div> <h2>14. <img src="gra/17_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question13_0" name="question13" type="radio"><label for="question13_0">1 2 --</label></li><li><input id="question13_1" name="question13" type="radio"><label for="question13_1">-- 1 2</label></li><li><input id="question13_2" name="question13" type="radio"><label for="question13_2">1 1 --</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question correctResponse" id="question14" style="display: none;"><div class="questionCount"><span class="current">15</span> <b>z</b> <span class="total">25</span></div> <h2>15. <img src="gra/_3_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question14_0" name="question14" type="radio"><label for="question14_0">Jest błąd w skrypcie.</label></li><li><input id="question14_1" name="question14" type="radio"><label for="question14_1">Zmienna liczba jest równa 20.Zmienna liczba jest równa 30.Zmienna liczba nie jest równa ani 10, ani 20,ani 30.</label></li><li><input id="question14_2" name="question14" type="radio"><label for="question14_2">Zmienna liczba jest równa 20.</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question15" style="display: none;"><div class="questionCount"><span class="current">16</span> <b>z</b> <span class="total">25</span></div> <h2>16. <img src="gra/20_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question15_0" name="question15" type="radio"><label for="question15_0">135</label></li><li><input id="question15_1" name="question15" type="radio"><label for="question15_1">246</label></li><li><input id="question15_2" name="question15" type="radio"><label for="question15_2">12345</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question correctResponse" id="question16" style="display: none;"><div class="questionCount"><span class="current">17</span> <b>z</b> <span class="total">25</span></div> <h2>17. <img src="gra/22_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question16_0" name="question16" type="radio"><label for="question16_0">0123456</label></li><li><input id="question16_1" name="question16" type="radio"><label for="question16_1">0246</label></li><li><input id="question16_2" name="question16" type="radio"><label for="question16_2">123456</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question17" style="display: none;"><div class="questionCount"><span class="current">18</span> <b>z</b> <span class="total">25</span></div> <h2>18. <img src="gra/_1_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question17_0" name="question17" type="radio"><label for="question17_0"> Zmienna liczba jest równa 30.</label></li><li><input id="question17_1" name="question17" type="radio"><label for="question17_1"> Zmienna liczba nie jest równa ani 10, ani 20,ani 30. </label></li><li><input id="question17_2" name="question17" type="radio"><label for="question17_2"> Zmienna liczba jest równa 20.</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question18" style="display: none;"><div class="questionCount"><span class="current">19</span> <b>z</b> <span class="total">25</span></div> <h2>19. <img src="gra/11_pyt.jpg" style="vertical-align: middle"> Ten operator to  ?</h2><ul class="answers"><li><input id="question18_0" name="question18" type="radio"><label for="question18_0">Mniejszy lub równy.Sprawdza czy liczba po prawej stronie znaku jest większa od liczby po lewej lub jej równa.</label></li><li><input id="question18_1" name="question18" type="radio"><label for="question18_1">Większy lub równy.Sprawdza czy liczba po lewej stronie znaku jest większa od liczby po prawej lub jej równa. </label></li><li><input id="question18_2" name="question18" type="radio"><label for="question18_2">Mniejszy lub równy.Sprawdza czy liczba po lewej stronie znaku jest mniejsza od liczby po prawej lub jej równa.</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question19" style="display: none;"><div class="questionCount"><span class="current">20</span> <b>z</b> <span class="total">25</span></div> <h2>20. <img src="gra/_9_pyt.jpg" style="vertical-align: middle">Ten operator to ?</h2><ul class="answers"><li><input id="question19_0" name="question19" type="radio"><label for="question19_0">Nie równa się .Sprawdza czy dwie wartości są różne.</label></li><li><input id="question19_1" name="question19" type="radio"><label for="question19_1">Identyczne .Sprawdza czy dwie wartości są dokładnie takie same.</label></li><li><input id="question19_2" name="question19" type="radio"><label for="question19_2">Nieidentyczny.Porównuje wartość i  typy.</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question20" style="display: none;"><div class="questionCount"><span class="current">21</span> <b>z</b> <span class="total">25</span></div> <h2>21. <img src="gra/15_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question20_0" name="question20" type="radio"><label for="question20_0">a b c</label></li><li><input id="question20_1" name="question20" type="radio"><label for="question20_1">a b c d e</label></li><li><input id="question20_2" name="question20" type="radio"><label for="question20_2">a b c d</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question21" style="display: none;"><div class="questionCount"><span class="current">22</span> <b>z</b> <span class="total">25</span></div> <h2>22. <img src="gra/_4_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question21_0" name="question21" type="radio"><label for="question21_0">1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</label></li><li><input id="question21_1" name="question21" type="radio"><label for="question21_1">2 4 6 8 10 12 14 16 18 20</label></li><li><input id="question21_2" name="question21" type="radio"><label for="question21_2">1 2 4 6 8 10 12 14 16 18 20</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question22" style="display: none;"><div class="questionCount"><span class="current">23</span> <b>z</b> <span class="total">25</span></div> <h2>23. <img src="gra/_7_pyt.jpg" style="vertical-align: middle"> Ten operator to ?</h2><ul class="answers"><li><input id="question22_0" name="question22" type="radio"><label for="question22_0">Identyczne .Sprawdza czy dwie wartości są dokładnie takie same.</label></li><li><input id="question22_1" name="question22" type="radio"><label for="question22_1">Nie równa się .Sprawdza czy dwie wartości są różne.</label></li><li><input id="question22_2" name="question22" type="radio"><label for="question22_2">Przypisuje wartość jednej zmiennej do drugiej zmiennej.</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question23" style="display: none;"><div class="questionCount"><span class="current">24</span> <b>z</b> <span class="total">25</span></div> <h2>24. <img src="gra/_6_pyt.jpg" style="vertical-align: middle"> Ten operator to  ?</h2><ul class="answers"><li><input id="question23_0" name="question23" type="radio"><label for="question23_0">Równa się .Sprawdza czy dwie wartości są takie same.</label></li><li><input id="question23_1" name="question23" type="radio"><label for="question23_1">Przypisuje wartość jednej zmiennej do drugiej zmiennej.</label></li><li><input id="question23_2" name="question23" type="radio"><label for="question23_2">Identyczne .Sprawdza czy dwie wartości są dokładnie takie same.</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li><li class="question" id="question24" style="display: list-item;"><div class="questionCount"><span class="current">25</span> <b>z</b> <span class="total">25</span></div> <h2>25. <img src="gra/13_pyt.jpg" style="vertical-align: middle"> Skrypt pokaże  ?</h2><ul class="answers"><li><input id="question24_0" name="question24" type="radio"><label for="question24_0">ostatni, trzeci, drugi, pierwszy</label></li><li><input id="question24_1" name="question24" type="radio"><label for="question24_1">ostatni trzeci drugi pierwszy</label></li><li><input id="question24_2" name="question24" type="radio"><label for="question24_2">pierwszy drugi trzeci ostatni</label></li></ul><a href="" class="button backToQuestion" style="display: inline;">WRÓĆ</a><a href="" class="button nextQuestion checkAnswer">DALEJ</a></li></ol></div>
+       <div class="quizResults" style="display: block;">
+       <h1 class="quizScore">PRAWIDŁOWYCH _: <span>25</span></h1>
+       <h6 class="quizScore1">BŁĘDNYCH _: <span>0</span></h6>
+       <h3 class="quizLevel level81"><span> <h3>PROCENT_: 100% </h3></span></h3>
+       
+       <div class="quizResultsCopy">
+       <!-- where the quiz result copy goes -->
+       <h4>14 pkt. NIEDOSTATECZNY  ( 1.0)</h4>
+       <h4>15-pkt. -DOPUSZCZAJĄCY  (-2.0)</h4>
+       <h4>16-pkt. DOPUSZCZAJĄCY   ( 2.0)</h4>
+       <h4>17-pkt. +DOPUSZCZAJĄCY (+2.0)</h4>
+       <h4>18-pkt. -DOSTATECZNY       (-3.0)</h4>
+       <h4>19-pkt. DOSTATECZNY        ( 3.0)</h4>
+       <h4>20-pkt. +DOSTATECZNY      (+3.0)</h4>
+       <h4>21-pkt. -DOBRY                    (-4.0)</h4>
+       <h4>22-pkt. DOBRY                     ( 4.0)</h4>
+       <h4>23-pkt. +DOBRY                   (+4.0)</h4>
+       <h4>24-pkt. -BARDZO DOBRY    (-5.0)</h4>
+       <h4>25-pkt.BARDZO DOBRY      ( 5.0)</h4>
+       <a href="https://dawidowicz.info.pl/testy/podstawy_sql/test1/start1.html"><div class="odnosnik" href="test1.html">WRÓĆ DO STRONY GŁÓWNEJ</div></a></div>
+      </div>
+           <script src="js/jquery-1.7.min.js"></script>
+           <script src="js/slickQuiz-config.js"></script>
+           <script src="js/slickQuiz.js"></script>
+           <script src="js/master.js"></script>
+       
+   </body>
